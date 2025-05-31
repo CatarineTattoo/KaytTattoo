@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Tatuadora especializada em blackwork e fine line. Atendimento em Osasco - SP e Balneário Camboriú - SC." />
+  <meta name="keywords" content="tatuadora, blackwork, fine line, tatuagem, Osasco, Balneário Camboriú" />
+  <meta name="author" content="Catarine - Delakaytattoo" />
+  <title>Delakaytattoo - Tatuadora</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="icon" href="icone/pincel-grande.png" type="image/png" />
+  
+</head>
+
+<body>
+  <header>
+    <div class="fixed-message">Restam 7 vagas!</div>
+  </header>
+
+  
+  <main class="container">
+    <section>
+        <h1 class="titulo">Delakaytattoo</h1>
+        <a href="index.html" class="back-button">← Home</a>
+    </section>
+    <section class="image-section">
+        <h2 class ="tituloAutorais">Autorais disponíveis:</h2>
+        </p>
+    </div>
+    <section class="carousel">
+      <div class="carousel-images">
+        <img src="autorais/1.jpg">
+        <img src="autorais/2.jpg">
+        <img src="autorais/3.jpg">
+        <img src="autorais/4.jpg">
+        <img src="autorais/5.jpg">
+        <img src="autorais/6.jpg">
+        <img src="autorais/7.jpg">
+      </div>
+      <button class="prev" aria-label="Imagem anterior">&#10094;</button>
+      <button class="next" aria-label="Próxima imagem">&#10095;</button>
+    </section>
+</main>
+ 
+  <script>
+    const fixedMessage = document.querySelector('.fixed-message');
+    const vagas = [6, 7, 7, 7, 8];
+    const indiceAleatorio = Math.floor(Math.random() * vagas.length);
+    fixedMessage.textContent = `Restam ${vagas[indiceAleatorio]} vagas!`;
+
+    const carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(carousel => {
+      const imagesContainer = carousel.querySelector('.carousel-images');
+      const images = imagesContainer.querySelectorAll('img');
+      const prevBtn = carousel.querySelector('.prev');
+      const nextBtn = carousel.querySelector('.next');
+
+      let index = 0;
+
+      function showImage() {
+        const width = images[0].clientWidth;
+        imagesContainer.style.transform = `translateX(${-index * width}px)`;
+      }
+
+      nextBtn.addEventListener('click', () => {
+        index = (index + 1) % images.length;
+        showImage();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        index = (index - 1 + images.length) % images.length;
+        showImage();
+      });
+
+      window.addEventListener('resize', showImage);
+    });
+  </script>
+</body>
+</html>
