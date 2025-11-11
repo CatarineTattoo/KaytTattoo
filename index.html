@@ -38,6 +38,76 @@
         Orçamento SP
       </a>
 
+<style>
+/* Estilos das abas principais */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tab {
+  background-color: #222;
+  color: #ffcc00;
+  padding: 10px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tab:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+/* Subabas (valores do vale) */
+.subtabs {
+  display: none;
+  flex-direction: column;
+  margin-top: 8px;
+  margin-left: 18px;
+}
+
+.subtab {
+  background-color: #333;
+  color: #ffcc00;
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-bottom: 6px;
+  font-size: 0.95em;
+  transition: background 0.3s;
+}
+
+.subtab:hover {
+  background-color: #555;
+}
+</style>
+
+<div class="tabs">
+  <!-- Outras abas já existentes -->
+
+  <!-- Nova aba: Presenteie com Tattoo -->
+  <div class="tab" onclick="toggleSubtabs('presenteieTattoo')">🎁 Presenteie com Tattoo</div>
+
+  <div id="presenteieTattoo" class="subtabs">
+    <a class="subtab" href="https://wa.me/5511974585154?text=Oi%2C%20gostaria%20de%20presentear%20uma%20pessoa%20com%20um%20vale%20tattoo%20de%20300%2C00." target="_blank">Vale Presente R$300,00</a>
+    <a class="subtab" href="https://wa.me/5511974585154?text=Oi%2C%20gostaria%20de%20presentear%20uma%20pessoa%20com%20um%20vale%20tattoo%20de%20400%2C00." target="_blank">Vale Presente R$400,00</a>
+    <a class="subtab" href="https://wa.me/5511974585154?text=Oi%2C%20gostaria%20de%20presentear%20uma%20pessoa%20com%20um%20vale%20tattoo%20de%20600%2C00." target="_blank">Vale Presente R$600,00</a>
+  </div>
+</div>
+
+<script>
+function toggleSubtabs(id) {
+  const subtabs = document.getElementById(id);
+  subtabs.style.display = subtabs.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>
       <a href="autorias.html" class="button">Ver autorias disponíveis</a>
     </section>
 
