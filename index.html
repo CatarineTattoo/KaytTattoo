@@ -97,30 +97,25 @@ text-align: center;
 
 <div class="tabs">
   <!-- Outras abas já existentes -->
-
 <script>
 function toggleSubtabs(id) {
   const subtabs = document.getElementById(id);
-  if (!subtabs) return; // segurança
-
-  // lê o display computado (mesmo vindo do CSS)
-  const current = window.getComputedStyle(subtabs).display;
-
-  // quando hidden (none) -> mostra como flex (já que .subtabs usa flex-direction)
+  const current = subtabs.style.display;
   subtabs.style.display = current === 'none' ? 'flex' : 'none';
 }
 </script>
-  <!-- Nova aba: Presenteie com Tattoo -->
-  <div class="tab" onclick="toggleSubtabs('presenteieTattoo')">🎁 Presenteie com Tattoo</div>
 
-  <div id="presenteieTattoo" class="subtabs">
-    <a class="subtab" href="https://wa.me/5511974585154?text=Oi%2C%20gostaria%20de%20presentear%20uma%20pessoa%20com%20um%20vale%20tattoo%20de%20300%2C00." target="_blank">Vale Presente R$300,00</a>
-    <a class="subtab" href="https://wa.me/5511974585154?text=Oi%2C%20gostaria%20de%20presentear%20uma%20pessoa%20com%20um%20vale%20tattoo%20de%20400%2C00." target="_blank">Vale Presente R$400,00</a>
-    <a class="subtab" href="https://wa.me/5511974585154?text=Oi%2C%20gostaria%20de%20presentear%20uma%20pessoa%20com%20um%20vale%20tattoo%20de%20600%2C00." target="_blank">Vale Presente R$600,00</a>
-  </div>
+<!-- Nova aba: Presenteie com Tattoo -->
+<div class="tab" onclick="toggleSubtabs('presenteieTattoo')">🎁 Presenteie com Tattoo</div>
+
+<div id="presenteieTattoo" class="subtabs">
+  <a class="subtab" href="https://wa.me/5511974585154?text=Oi%2C%20gostaria%20de%20presentear%20uma%20pessoa%20com%20um%20vale%20tattoo%20de%20300%2C00." target="_blank">Vale Presente R$300,00</a>
+  <a class="subtab" href="https://wa.me/5511974585154?text=Oi%2C%20gostaria%20de%20presentear%20uma%20pessoa%20com%20um%20vale%20tattoo%20de%20400%2C00." target="_blank">Vale Presente R$400,00</a>
+  <a class="subtab" href="https://wa.me/5511974585154?text=Oi%2C%20gostaria%20de%20presentear%20uma%20pessoa%20com%20um%20vale%20tattoo%20de%20600%2C00." target="_blank">Vale Presente R$600,00</a>
 </div>
 </div>
-<script>
+</div>
+
 function toggleSubtabs(id) {
   const subtabs = document.getElementById(id);
   subtabs.style.display = subtabs.style.display === 'flex' ? 'none' : 'flex';
