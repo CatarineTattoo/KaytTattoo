@@ -116,10 +116,11 @@ function toggleSubtabs(id) {
 </div>
 </div>
 
-function toggleSubtabs(id) {
-  const subtabs = document.getElementById(id);
-  subtabs.style.display = subtabs.style.display === 'flex' ? 'none' : 'flex';
-}
+119  function toggleSubtabs(id) {
+120    const subtabs = document.getElementById(id);
+121    const current = subtabs.style.display;
+122    subtabs.style.display = current === 'flex' ? 'none' : 'flex';
+123  }
 
 
 
