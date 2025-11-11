@@ -46,14 +46,14 @@
   gap: 10px;
 }
 
- .tab {
-  background-color: #222;
-  color: #ffcc00;
+.tab {
+  background-color: #222;        /* Fundo cinza escuro */
+  color: #ffcc00;                /* Texto amarelo ouro */
   padding: 10px 16px;
   border-radius: 5px;
   width: 100%;
-box-sizing: border-box;
-text-align: center;
+  box-sizing: border-box;
+  text-align: center;
   text-decoration: none;
   cursor: pointer;
   font-weight: bold;
@@ -62,6 +62,12 @@ text-align: center;
   align-items: center;
   justify-content: center;
   gap: 6px;
+}
+
+.tab:hover {
+  background-color: #333;        /* Fundo mais claro no hover */
+  transform: scale(1.03);        /* Leve zoom */
+}
 }
 
 .tab:hover {
